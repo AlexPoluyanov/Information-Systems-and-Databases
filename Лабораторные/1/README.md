@@ -6,8 +6,8 @@
   <li><a href="#2">Архитектура ANSI-SPARC.</a></li>
   <li><a href="#3">Модель "Сущность-Связь". Классификация сущностей. Виды связей.</a></li>
   <li><a href="#4">Из каких подмножеств состоит SQL.</a></li>
-  <li><a href="#5">DDL. Ключевые слова. Примеры.</a></li>
-  <li><a href="#6">DML. Ключевые слова. Примеры.</a></li>
+  <li><a href="#5">DDL. Ключевые операторы. Примеры.</a></li>
+  <li><a href="#6">DML. Ключевые операторы. Примеры.</a></li>
   <li><a href="#7">Что такое инфологическая и даталогическая модели бд.</a></li>
   <li><a href="#8">Что такое Primary Key, Foreign Key. Что такое потенциальный ключ.</a></li>
   <li><a href="#9">Плюсы и минусы использования суррогатных, естественных и составных ключей.</a></li>
@@ -90,7 +90,7 @@ Server, Caché.</li>
 установки. Примеры — SQLite, BerkeleyDB.</li>
 </ul>
 
-<a href="https://blog.skillfactory.ru/glossary/subd/"  target="_blank">Подробнее про СУБД</a>
+<a href="https://blog.skillfactory.ru/glossary/subd/"  target="_blank">Подробнее про СУБД</a><hr>
 
 <h3 id="2">2. Архитектура ANSI-SPARC.</h3>
 
@@ -127,7 +127,7 @@ Server, Caché.</li>
 постепенный и безопасный переход на новую версию.
 
 Если для работы нового приложения требуются дополнительные структуры
-данных, эти структуры могут быть добавлены в концептуальную схему, что теоретически не повлияет на работу других приложений, так как их внешние схемы не будут содержать новых элементов данных.
+данных, эти структуры могут быть добавлены в концептуальную схему, что теоретически не повлияет на работу других приложений, так как их внешние схемы не будут содержать новых элементов данных.<hr>
 
 
 <h3 id="3">3. Модель "Сущность-Связь". Классификация сущностей. Виды связей.</h3>
@@ -176,6 +176,11 @@ Server, Caché.</li>
     <td><p align="center"><img src="https://neerc.ifmo.ru/wiki/images/thumb/1/1a/Db_optional.png/50px-Db_optional.png"></p></td>
   </tr>
 </table>
+<details>
+  <summary>Все виды концов связей.</summary>
+  <img src="https://avatars.mds.yandex.net/get-lpc/1520633/9346286d-22db-439a-9ced-422fc163c2cd/width_480_q70"></a>
+</details>
+
 
 <b>Виды связей.</b>
 <table>
@@ -216,7 +221,107 @@ Server, Caché.</li>
   <tr><td colspan=3>* изображения типов концов связей приведены для примера</td></tr>
 </table>
 
+<b>Слабой сущностью</b> называется сущность, у которой недостаточно атрибутов для идентификации.
+
+<b>Идентифицирующей связью</b> называется связь, позволяющая слабой сущности получить атрибуты, необходимые для ее идентификации.
+
+<a href="https://neerc.ifmo.ru/wiki/index.php?title=%D0%9C%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C_%D1%81%D1%83%D1%89%D0%BD%D0%BE%D1%81%D1%82%D1%8C-%D1%81%D0%B2%D1%8F%D0%B7%D1%8C">Подробнее</a><hr>
+
+<h3 id="4">4. Из каких подмножеств состоит SQL.</h3>
+
+<img src="https://1c-md.com/wp-content/webp-express/webp-images/doc-root/wp-content/uploads/2020/01/cbs-images-ff4bc89e-6b32-436d-b57a-bdbee58e1290.jpg.webp">
+
+Про DDL смотреть <a href="#5">тут</a>.
+
+Про DML смотреть <a href="#6">там</a>.
+
+<b>Data Control Language (DCL)</b> - группа операторов определения доступа к данным. Иными словами, это операторы для управления разрешениями, с помощью них мы можем разрешать или запрещать выполнение определенных операций над объектами базы данных.
+
+<b>Ключевые операторы:</b>
+* GRANT – предоставляет пользователю или группе разрешения на определённые операции с объектом;
+* REVOKE – отзывает выданные разрешения;
+* DENY – задаёт запрет, имеющий приоритет над разрешением.
+<a href="https://github.com/AlexPoluyanov/Information-Systems-and-Databases/tree/main/%D0%9B%D0%B0%D0%B1%D0%BE%D1%80%D0%B0%D1%82%D0%BE%D1%80%D0%BD%D1%8B%D0%B5/4#%D1%81%D0%BF%D0%B8%D1%81%D0%BE%D0%BA-%D0%B2%D0%BE%D0%BF%D1%80%D0%BE%D1%81%D0%BE%D0%B2-%D0%B4%D0%BB%D1%8F-%D0%B7%D0%B0%D1%89%D0%B8%D1%82%D1%8B">Подробнее</a>
+
+Примеры:
+
+<pre><code>GRANT INSERT ON my_table TO user;</code></pre>
+<pre><code>REVOKE INSERT ON my_table TO user;</code></pre><hr>
+
+<b>Transaction Control Language (TCL)</b> – группа операторов для управления транзакциями. Транзакция – это команда или блок команд (инструкций), которые успешно завершаются как единое целое, при этом в базе данных все внесенные изменения фиксируются на постоянной основе или отменяются, т.е. все изменения, внесенные любой командой, входящей в транзакцию, будут отменены.
+
+<b>Ключевые операторы:</b>
+* BEGIN TRANSACTION – служит для определения начала транзакции;
+* COMMIT TRANSACTION – применяет транзакцию;
+* ROLLBACK TRANSACTION – откатывает все изменения, сделанные в контексте текущей транзакции;
+* SAVE TRANSACTION – устанавливает промежуточную точку сохранения внутри транзакции.
+
+Пример:
+
+<pre><code>BEGIN;
+UPDATE my_table SET balance = balance - 100 WHERE used_id = 10;
+UPDATE my_table SET balance = balance + 100 WHERE used_id = 20;
+ROLLBACK
+COMMIT;</code></pre>
+
+<a href="https://github.com/AlexPoluyanov/Information-Systems-and-Databases/tree/main/%D0%9B%D0%B0%D0%B1%D0%BE%D1%80%D0%B0%D1%82%D0%BE%D1%80%D0%BD%D1%8B%D0%B5/3#%D1%81%D0%BF%D0%B8%D1%81%D0%BE%D0%BA-%D0%B2%D0%BE%D0%BF%D1%80%D0%BE%D1%81%D0%BE%D0%B2-%D0%B4%D0%BB%D1%8F-%D0%B7%D0%B0%D1%89%D0%B8%D1%82%D1%8B">Подробнее</a><hr>
+
+<b>Data Query Language (DQL)</b> - выборка данных. Язык запросов DQL наиболее известен пользователям реляционной БД, несмотря на то, что он включает одну команду.
+
+<b>Ключевые операторы:</b>
+* SELECT - оператор запроса, который возвращающает определённый набор данных из базы данных. Список столбцов выборки задаётся в части оператора, которая называется предложением оператора SELECT.</b>
+
+Примеры:
+
+<pre><code>SELECT *
+FROM students;</code></pre>
+<pre><code>SELECT column1, column2, ...
+FROM table_name;</code></pre>
+<pre><code>SELECT DISTINCT students.name, students.surname
+FROM students;</code></pre><hr>
+
+<h3 id="5">5. DDL. Ключевые операторы. Примеры.</h3>
+
+<b>Data Definition Language (DDL)</b> – это группа операторов определения данных. Другими словами, с помощью операторов, входящих в эту группы, мы определяем структуру базы данных и работаем с объектами этой базы, т.е. создаем, изменяем и удаляем их.
+
+<b>Ключевые операторы:</b>
+* CREATE - создает объекты базы данных (таблицы, представления и т.д.)
+* ALTER - Изменяет структуру и объекты базы данных
+* DROP - Удаляет объекты базы данных
+* TRUNCATE - Удаляет все записи из таблицы
+* COMMENT - Добавляет комментарии в словарь данных
+* RENAME - Переименовывает объект (alter table <old_name> rename to <new_name>)
+
+Примеры:
+
+<pre><code>CREATE TABLE IF NOT EXISTS table_name (
+    user_id serial PRIMARY KEY,
+    username VARCHAR ( 50 ) NOT NULL,
+    last_login TIMESTAMP
+);</code></pre>
+<pre><code>ALTER TABLE old_table_name RENAME TO new_table_name;</code></pre><hr>
 
 
+<h3 id="6">6. DML. Ключевые операторы. Примеры.</h3>
 
+<b>Data Manipulation Language (DML)</b> – это группа операторов для манипуляции данными. С помощью этих операторов мы можем добавлять, изменять, удалять и выгружать данные из базы, т.е. манипулировать ими.
+
+<b>Ключевые операторы:</b>
+* SELECT – выборка данных
+* INSERT – вставка новых данных
+* UPDATE – обновление данных
+* DELETE – удаление данных
+* MERGE – слияние данных
+
+Примеры:
+
+<pre><code>INSERT INTO Product
+SET maker = 'B',
+    model = 1157,
+    type = 'PC';</code></pre>
+<pre><code>INSERT INTO Product_D(maker, model, type) VALUES
+('B', 1158, 'PC'),
+('C', 2190, 'Laptop'),
+('D', 3219, 'Printer');
+</code></pre><hr>
 
