@@ -1,0 +1,1 @@
+CREATE INDEX user_username_hash_idx ON users USING HASH (username);

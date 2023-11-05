@@ -1,0 +1,25 @@
+DROP TABLE IF EXISTS insurance CASCADE;
+
+DROP TABLE IF EXISTS crashes CASCADE;
+
+DROP TABLE IF EXISTS users CASCADE;
+
+DROP TABLE IF EXISTS photos CASCADE;
+
+DROP TABLE IF EXISTS cars CASCADE;
+
+DROP TYPE IF EXISTS num_type;
+
+DROP TYPE IF EXISTS car_body_type;
+
+DROP TYPE IF EXISTS transmission_type;
+
+DROP TYPE IF EXISTS wheel_drive_type;
+
+DROP TYPE IF EXISTS rudder;
+
+DROP FUNCTION IF EXISTS get_all_photos;
+
+DROP FUNCTION IF EXISTS get_all_crashes;
+
+DROP INDEX IF EXISTS user_username_hash_idx;
