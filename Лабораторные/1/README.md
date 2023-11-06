@@ -528,7 +528,7 @@ INSERT INTO cars (vin, year) VALUES
 </code></pre>
 <pre><code>SELECT SUM(salary) AS total_salary FROM employees;</code></pre>
 
-<b>Скалярные функции</b> - принимают на вход одно значение и возвращают одно значение, но применяются к каждой строке.
+<b>Скалярные функции</b> - это функции, которые принимают набор входных параметров и возвращают единственное значение. Это могут быть функции для выполнения математических вычислений, обработки строк, дат и времени, агрегации и других операций. В предыдущем ответе, я привел примеры скалярных функций.
 Примеры:
 - ABS(x): возвращает абсолютное значение числа x.
 - ROUND(x, d): округляет число x до d знаков после запятой.
@@ -537,9 +537,8 @@ INSERT INTO cars (vin, year) VALUES
 - UPPER(str): преобразует строку str в верхний регистр.
 
 Примеры в SQL:
-<pre><code>
-</code></pre>
-<pre><code>SELECT SUM(salary) AS total_salary FROM employees;</code></pre>
+<pre><code>SELECT sqrt(25);</code></pre>
+<pre><code>SELECT UPPER('Привет, мир!');</code></pre>
 
 
 <hr><h3 id="11">11. Что такое отношение, атрибут, заголовок, тело, кортеж.</h3>
@@ -565,7 +564,58 @@ INSERT INTO cars (vin, year) VALUES
 
 Кортеж - это термин, используемый в контексте реляционных баз данных для обозначения одной записи или строки в отношении. Каждый кортеж содержит набор значений, соответствующих атрибутам таблицы.
 
-<hr><h3 id="12">12. </h3>
+<hr><h3 id="12">12. CRUD.</h3>
+<p align="center"><img src="https://cdn2.hexlet.io/derivations/image/original/eyJpZCI6ImE2YzU1OGE1YjI0MjcwMmM4ZTZkOGNkYmM1MDFiMDc1LnBuZyIsInN0b3JhZ2UiOiJjYWNoZSJ9?signature=d5b2770b94d93eef3cec056724cb89c0af890057ec6da4151a52a40c7b6e858e" height="70%"width="70%"></p>
+
+![image](https://github.com/AlexPoluyanov/Information-Systems-and-Databases/assets/109956453/da1a7366-7541-403f-bab4-cd23b793bfdd)
+
+C — Create («создать»): добавляем новую запись или ресурс в БД. В SQL реализуется командами CREATE и INSERT.
+
+<b>CREATE</b> 
+
+CREATE используется для создания новых объектов в базе данных, таких как таблицы, индексы, представления, процедуры, функции и т. д. Команда CREATE может иметь разные вариации в зависимости от типа объекта, который вы хотите создать.
+
+Примеры:
+
+<pre><code>CREATE TYPE gender AS ENUM ('Male', 'Female', 'Other');</code></pre>
+<pre><code>CREATE TABLE employees (
+    employee_id INT PRIMARY KEY,
+    first_name VARCHAR(50),
+    last_name VARCHAR(50),
+    hire_date DATE
+);
+</code></pre>
+<pre><code>CREATE INDEX idx_employee_last_name ON employees (last_name);</code></pre><hr>
+
+
+<b>INSERT</b>
+
+INSERT используется для добавления новых записей (строк) в таблицу. Эта команда выполняет операцию вставки данных в таблицу. Синтаксис команды INSERT может немного различаться в зависимости от конкретной системы управления базами данных (СУБД), но общие элементы обычно остаются теми же.
+
+Примеры:
+
+<pre><code>INSERT INTO films VALUES
+    ('UA502', 'Bananas', 105, '1971-07-13', 'Comedy', '82 minutes');
+</code></pre>
+<pre><code>INSERT INTO films (code, title, did, date_prod, kind) VALUES
+    ('B6717', 'Tampopo', 110, '1985-02-10', 'Comedy'),
+    ('HG120', 'The Dinner Game', 140, DEFAULT, 'Comedy');
+</code></pre>
+<pre><code>INSERT INTO new_employees (first_name, last_name, hire_date)
+SELECT first_name, last_name, hire_date
+FROM old_employees
+WHERE hire_date >= '2023-01-01';
+</code></pre>
+<pre><code>INSERT INTO distributors (did, dname) VALUES (7, 'Redline GmbH')
+    ON CONFLICT (did) DO NOTHING;</code></pre><hr>
+
+
+R — Read («прочитать»): получаем данные из базы данных или ресурса. В SQL реализуется командамой SELECT.
+
+U — Update («обновить»): меняем существующую запись. В SQL реализуется командамой UPDATE.
+
+D — Delete («удалить»): удаляем запись или ресурс из базы данных. В SQL реализуется командамой DELETE и DROP.
+
 <hr><h3 id="13">13. </h3>
 <hr><h3 id="14">14. </h3>
 <hr><h3 id="15">15. </h3>
