@@ -1,11 +1,12 @@
 # Рубежный котроль БД <hr>
 
 ## Содержание:
-* [Задания](-tasks) 
-* [Варианты предметных областей](-subject_area_options)
-* [Теория](-theory)
-* [Реализация](-realization) 
-
+* [Задания](#tasks) 
+* [Варианты предметных областей](#subject_area_options)
+* [Теория](#theory)
+* [Реализация](#realization) 
+- [Getting started with Markdown](#getting-started-with-markdown)
+  
 ## [Задания:](#tasks)
 
 **Задание 1.**
@@ -68,7 +69,7 @@ erDiagram
 
 <p>Привести DDL для реализации сущностей, которые учавствуют в связях многие-ко-кногим, один-к-одному (связи тоже должны присутствовать в коде).</p>
 
-
+[Markdown - Summary](#Getting-started-with-Markdown)
 
 <b>Задание 3.</b>
 
