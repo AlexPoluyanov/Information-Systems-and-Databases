@@ -161,7 +161,7 @@ CREATE TABLE tickets (
 
 ```
 
-3) 1 к *
+2) 1 к *
 
 ```sql
 -- Создание таблицы "baggage"
@@ -195,8 +195,6 @@ CREATE TABLE customs_results (
     reason TEXT,
     passed BOOLEAN NOT NULL
 );
-
-
 ```
 
 <b>Задание 3.</b>
