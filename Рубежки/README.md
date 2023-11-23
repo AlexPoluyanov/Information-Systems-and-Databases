@@ -1,4 +1,4 @@
-![image](https://github.com/AlexPoluyanov/Information-Systems-and-Databases/assets/109956453/c2c9ff1d-04bc-4001-a10a-774a891bc17c)# Рубежный котроль БД <hr>
+# Рубежный котроль БД <hr>
 
 ## Содержание:
 * [Задания](#Задания) 
