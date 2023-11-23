@@ -48,9 +48,9 @@
 erDiagram
     Passengers ||--|| Tickets : ""
     Tickets ||--o{ Baggage : ""
-    Baggage }|--|{ Customs_check : ""
+    Baggage ||--|{ Customs_check : ""
     Customs_inspectors ||--|{ Customs_check : ""
-    Customs_check }|--|{ Customs_results : ""
+    Customs_check }|--|| Customs_results : ""
     Flight_numbers ||--|{ Tickets : ""
     Ticket_class ||--|{ Tickets : ""
 
